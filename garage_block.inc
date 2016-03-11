@@ -36,7 +36,7 @@ enum GarageEnum {
 	Float:g_doorr
 }
 
-new G_Blocker[18][GarageEnum] = {
+new G_Blocker[][GarageEnum] = {
 	{GARAGE_TYPE_PAINT,		INVALID_OBJECT_ID,	1968.74219,		2162.49219,		12.09380,	0.0},
 	{GARAGE_TYPE_BOMB,		INVALID_OBJECT_ID,	2006.00000,		2303.72656,		11.31250,	90.0},
 	{GARAGE_TYPE_BOMB,		INVALID_OBJECT_ID,	2006.00000,		2317.60156,		11.31250,	-90.0},
@@ -63,11 +63,11 @@ stock BlockGarages(bool:block = true, GarageType:type = GARAGE_TYPE_ALL, text[] 
 {
 	if(type == GARAGE_TYPE_ALL) {
 		if(block == false) {
-			for(new i; i < 18; i++)
+			for(new i; i < sizeof(G_Blocker); i++)
 				DestroyDynamicObject(G_Blocker[i][g_object]);
 		}
 		else {
-			for(new i; i < 18; i++) {
+			for(new i; i < sizeof(G_Blocker); i++) {
 				DestroyDynamicObject(G_Blocker[i][g_object]);
 				
 				G_Blocker[i][g_object] = CreateDynamicObject(19325, G_Blocker[i][g_doorx], G_Blocker[i][g_doory], G_Blocker[i][g_doorz], 0.00000, 0.00000, G_Blocker[i][g_doorr]);
@@ -81,13 +81,13 @@ stock BlockGarages(bool:block = true, GarageType:type = GARAGE_TYPE_ALL, text[] 
 	}
 	else {
 		if(block == false) {
-			for(new i; i < 18; i++) {
+			for(new i; i < sizeof(G_Blocker); i++) {
 				if(G_Blocker[i][g_type] == type)
 					DestroyDynamicObject(G_Blocker[i][g_object]);
 			}
 		}
 		else {
-			for(new i; i < 18; i++) {
+			for(new i; i < sizeof(G_Blocker); i++) {
 				if(G_Blocker[i][g_type] == type) {
 					DestroyDynamicObject(G_Blocker[i][g_object]);
 					
