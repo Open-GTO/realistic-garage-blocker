@@ -72,7 +72,7 @@ stock BlockGarages(bool:block = true, GarageType:type = GARAGE_TYPE_ALL, text[] 
 				
 				G_Blocker[i][g_object] = CreateDynamicObject(19325, G_Blocker[i][g_doorx], G_Blocker[i][g_doory], G_Blocker[i][g_doorz], 0.00000, 0.00000, G_Blocker[i][g_doorr]);
 				
-				if(isnull(text))
+				if(!isnull(text))
 					SetDynamicObjectMaterialText(G_Blocker[i][g_object], 0, text, OBJECT_MATERIAL_SIZE_128x128, "Arial", 16, 1, 0xFFFF0000, 0x00000000, OBJECT_MATERIAL_TEXT_ALIGN_CENTER);
 				else
 					SetDynamicObjectMaterial(G_Blocker[i][g_object], 0, 0, "none", "none", 0x00FFFFFF);
@@ -93,7 +93,7 @@ stock BlockGarages(bool:block = true, GarageType:type = GARAGE_TYPE_ALL, text[] 
 					
 					G_Blocker[i][g_object] = CreateDynamicObject(19325, G_Blocker[i][g_doorx], G_Blocker[i][g_doory], G_Blocker[i][g_doorz], 0.00000, 0.00000, G_Blocker[i][g_doorr]);
 					
-					if(isnull(text))
+					if(!isnull(text))
 						SetDynamicObjectMaterialText(G_Blocker[i][g_object], 0, text, OBJECT_MATERIAL_SIZE_128x128, "Arial", 16, 0, 0xFFFF0000, 0x00000000, OBJECT_MATERIAL_TEXT_ALIGN_CENTER);
 					else
 						SetDynamicObjectMaterial(G_Blocker[i][g_object], 0, 0, "none", "none", 0x00FFFFFF);
