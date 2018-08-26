@@ -7,7 +7,7 @@
 */
 
 #if !defined _samp_included
-	#error "Please include a_samp or a_npc before skinselect"
+	#error "Please include a_samp or a_npc before garage_block"
 #endif
 
 #if !defined _streamer_included
