@@ -60,7 +60,7 @@ static gGarageBlocks[][E_GARAGE_BLOCKS] = {
 	{GARAGE_BLOCK_MODSHOP, 1041.35254, -1025.90967, 32.67188, 90.0, INVALID_OBJECT_ID}
 };
 
-stock ToggleGaragesBlock(block = GARAGE_BLOCK_ALL, text[] = "")
+stock ToggleGaragesBlock(const block = GARAGE_BLOCK_ALL, const text[] = "")
 {
 	if (block == GARAGE_BLOCK_DISABLED) {
 		for (new i; i < sizeof(gGarageBlocks); i++) {
